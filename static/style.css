@@ -1,22 +1,22 @@
-/* Resetando margens e definindo a tipografia padrão */
-* {
+
+ h2{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-h2
+
 body {
-    background-color: #f8d7e4; /* Cor de fundo mais suave */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
-    color: #5b3e2f; /* Cor de texto mais suave */
+    background-color: #f6cbdc; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5b3e2f; 
     font-weight: 300;
     line-height: 1.6;
-    padding: 0 20px; /* Adicionando espaçamento nas laterais */
+    padding: 0 20px; 
 }
 
-/* Estilização do cabeçalho */
 header {
     display: flex;
+    border-radius: 15px;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 216, 223, 0.9);
@@ -26,54 +26,21 @@ header {
 }
 
 .icone img {
-    width: 120px; /* Diminuindo um pouco o tamanho */
+    width: 120px;
     opacity: 0.8;
 }
 
 .carousel-item img{
     height: 700px;
     width: 100%;
+    border-radius: 15px;
 }
 .atalhos {
     display: flex;
-    gap: 20px;
     font-size: 20px;
+    font-family: "Sour Gummy", serif;
+    font-optical-sizing: auto;
 }
-
-/* Seção de imagem principal */
-.meiao {
-    position: relative;
-    margin-top: 20px;
-    width: 100%;
-    height: 300px; /* Diminui a altura da imagem */
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites */
-    border-radius: 10px;
-}
-
-.meiao img {
-    width: 100%;
-    height: 100%; /* Faz com que a imagem ocupe toda a altura do contêiner */
-    object-fit: cover; /* Garante que a imagem cubra o contêiner sem distorcer */
-}
-
-.meiao h2, .meiao p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
-    color: white;
-    font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-.meiao p {
-    font-size: 20px; 
-    margin-top: 40px; 
-}
-
-
 
 .doces-pai {
     display: flex;
@@ -144,7 +111,6 @@ header {
 }
 
 
-/* Responsividade */
 @media (max-width: 768px) {
     .doces-pai {
         flex-direction: column;
