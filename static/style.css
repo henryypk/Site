@@ -12,6 +12,7 @@ body {
     font-weight: 300;
     line-height: 1.6;
     padding: 0 20px; 
+    
 }
 
 header {
@@ -23,9 +24,12 @@ header {
     padding: 20px 40px;
     border-bottom: 2px solid #f1c1d1;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
 .icone img {
+   
+    
     width: 120px;
     opacity: 0.8;
 }
