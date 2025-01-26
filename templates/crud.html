@@ -28,52 +28,68 @@
     <main>
         <div class="form-container">
             <form method="POST" enctype="multipart/form-data">
-                <h2>Registre o produto</h2>
+                <h2>{% if produto_editar %}Editar Produto{% else %}Registrar Produto{% endif %}</h2>
+                
+                <!-- Campo oculto para armazenar o ID do produto se estiver editando -->
+                <input type="hidden" name="id" value="{{ produto_editar.id if produto_editar else '' }}">
+            
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Informe o nome" required>
+                    <input type="text" id="nome" name="nome" value="{{ produto_editar.nome if produto_editar else '' }}" placeholder="Informe o nome" required>
                 </div>
-    
+            
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" id="preco" name="preco" placeholder="Informe o preço" required>
+                    <input type="number" id="preco" name="preco" value="{{ produto_editar.preco if produto_editar else '' }}" placeholder="Informe o preço" required>
                 </div>
-    
+            
                 <div class="form-group">
                     <label for="imagem">Imagem</label>
-                    <input type="file" id="imagem" name="imagem" required>
+                    <input type="file" id="imagem" name="imagem">
+                    {% if produto_editar and produto_editar.imagem %}
+                        <p>Imagem atual:</p>
+                        <img src="{{ produto_editar.imagem }}" alt="{{ produto_editar.nome }}" style="width: 150px; height: auto; margin-top: 10px;">
+                    {% endif %}
                 </div>
-    
+            
                 <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                    <button type="submit" class="btn btn-primary">
+                        {% if produto_editar %}Salvar Alterações{% else %}Registrar Produto{% endif %}
+                    </button>
                 </div>
             </form>
-        </div>
-    
-        <div class="product-list">
+    </div>
             <h2>Produtos Cadastrados</h2>
-            <table class="tabela-produtos">
+            <table>
                 <thead>
                     <tr>
                         <th>Imagem</th>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th>ações</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for produto in produtos %}
                     <tr>
                         <td>
-                            <img src="{{ produto.imagem }}" alt="{{ produto.nome }}">
+                            <img src="{{ produto.imagem }}" alt="{{ produto.nome }}" style="width: 100px;">
                         </td>
                         <td>{{ produto.nome }}</td>
                         <td>R$ {{ produto.preco }}</td>
-                        <td><button>editar</button><button>deletar</button></td>
+                        <td>
+                            <!-- Botão Editar -->
+                            <a href="{{ url_for('crud') }}?editar={{ produto.id }}">Editar</a>
+                            <!-- Botão Deletar -->
+                            <form action="{{ url_for('deletar', id=produto.id) }}" method="POST" style="display: inline;">
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este produto?')">Deletar</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            
             
         </div>
     </main>

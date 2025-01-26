@@ -50,28 +50,53 @@ def home():
 @app.route('/crud', methods=['GET', 'POST'])
 def crud():
     if request.method == 'POST':
+        # Verifica se é para editar ou criar
+        produto_id = request.form.get('id')  # Verifica se existe um ID no formulário
         nome = request.form['nome']
         preco = request.form['preco']
         imagem = request.files['imagem']
 
-        # Verifica se um arquivo foi enviado e se é permitido
-        if imagem and allowed_file(imagem.filename):
-            filename = secure_filename(imagem.filename)  # Evita problemas com o nome do arquivo
-            imagem_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            imagem.save(imagem_path)  # Salva a imagem no caminho seguro
+        if produto_id:  # Se existir um ID, é uma edição
+            produto = Produto.query.get_or_404(produto_id)
+            produto.nome = nome
+            produto.preco = float(preco)
+            
+            if imagem and allowed_file(imagem.filename):
+                filename = secure_filename(imagem.filename)
+                imagem_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                imagem.save(imagem_path)
+                produto.imagem = f'static/imagens/{filename}'
+                
+            db.session.commit()  # Commit para salvar as alterações
+        else:  # Caso contrário, é criação de novo produto
+            if imagem and allowed_file(imagem.filename):
+                filename = secure_filename(imagem.filename)
+                imagem_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                imagem.save(imagem_path)
+                novo_produto = Produto(nome=nome, preco=float(preco), imagem=f'static/imagens/{filename}')
+                db.session.add(novo_produto)
+                db.session.commit()
 
-            # Criando e salvando o produto no banco de dados
-            novo_produto = Produto(nome=nome, preco=float(preco), imagem=f'static/imagens/{filename}')
-            db.session.add(novo_produto)
-            db.session.commit()
+        return redirect(url_for('crud'))  # Redireciona para a página de CRUD
+    
+    # Caso GET, renderiza a página com a lista de produtos
+    produto_editar = None  # Inicializa a variável para produto editar
+    produto_id = request.args.get('editar')  # Pega o parâmetro editar da URL
+    
+    if produto_id:  # Se houver um ID, busca o produto para editar
+        produto_editar = Produto.query.get(produto_id)
+    
+    produtos = Produto.query.all()  # Obtém a lista de produtos
+    return render_template('crud.html', produtos=produtos, produto_editar=produto_editar)
 
-            return redirect(url_for('crud'))
-        else:
-            return "Arquivo não permitido. Envie imagens nos formatos: png, jpg, jpeg ou gif.", 400
+@app.route('/deletar/<int:id>', methods=['POST'])
+def deletar(id):
+    produto = Produto.query.get_or_404(id)  # Busca o produto ou retorna 404 se não existir
+    db.session.delete(produto)  # Remove o produto do banco de dados
+    db.session.commit()  # Salva as alterações
+    return redirect(url_for('crud'))
 
-    # Lista de produtos cadastrados
-    produtos = Produto.query.all()
-    return render_template('crud.html', produtos=produtos)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
