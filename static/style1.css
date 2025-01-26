@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    
 }
 
 h1, h2 {
@@ -118,6 +119,7 @@ footer {
 }
 
 
+
 .tabela-produtos {
     width: 100%;
     border-collapse: collapse;
@@ -148,6 +150,11 @@ footer {
     height: auto;
     border-radius: 8px;
 }
+
+.tabela-produtos a{
+    text-decoration: none;
+}
+
 /* Estilos Responsivos */
 @media (max-width: 768px) {
     .form-container {

@@ -11,8 +11,7 @@ body {
     color: #5b3e2f; 
     font-weight: 300;
     line-height: 1.6;
-
-    
+    background-image: url('/static/imagens/verniz.jpg');
 }
 
 header {
@@ -25,6 +24,7 @@ header {
     border-bottom: 2px solid #f1c1d1;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
+    opacity: 0.6;
 }
 
 .icone img {
@@ -37,7 +37,7 @@ header {
 .carousel-item img{
     height: 700px;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 25px;
     
 }
 .atalhos {
@@ -103,7 +103,7 @@ header {
     width: 250px;
     padding: 10px;
     margin-top: 15px;
-    background-color: #71fa3f;
+    background-color: #26660e;
     border: none;
     border-radius: 25px;
     color: white;
@@ -113,16 +113,36 @@ header {
 }
 
 .texto input:hover {
-    background-color: #5c7f4f;
+    background-color: #314729;
 }
 footer {
+    opacity: 0.6;
+    border-radius: 15px;
     margin-top: 20px;
     text-align: center;
     padding: 90px;
-    background-color: #5b3e2f;
-    color: white;
+    background-color: rgba(255, 216, 223, 0.9);
+    color: #5b3e2f;
     font-size: 0.9rem;
 }
+
+  .redes {
+    margin-top: 10px;
+  }
+  
+  .redes a {
+    text-decoration: none;
+    color: #000;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .redes a i {
+    margin-right: 10px;
+    font-size: 40px;
+  }
 
 @media (max-width: 768px) {
     .doces-pai {

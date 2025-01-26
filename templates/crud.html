@@ -60,7 +60,7 @@
             </form>
     </div>
             <h2>Produtos Cadastrados</h2>
-            <table>
+            <table class="tabela-produtos">
                 <thead>
                     <tr>
                         <th>Imagem</th>
@@ -79,7 +79,9 @@
                         <td>R$ {{ produto.preco }}</td>
                         <td>
                             <!-- Botão Editar -->
-                            <a href="{{ url_for('crud') }}?editar={{ produto.id }}">Editar</a>
+                            <a href="{{ url_for('crud') }}?editar={{ produto.id }}">
+                                <button type="submit">Editar</button>
+                            </a>
                             <!-- Botão Deletar -->
                             <form action="{{ url_for('deletar', id=produto.id) }}" method="POST" style="display: inline;">
                                 <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este produto?')">Deletar</button>
