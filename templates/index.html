@@ -16,9 +16,11 @@
 
 <body>
   <header>
+    <a href="/">
     <div class="icone">
       <img src="/static/imagens/logo.png" alt="">
     </div>
+    </a>
 
     <div class="atalhos">
       <h2>Sweet <br> Dream</h2>
@@ -51,187 +53,27 @@
 
       <div class="doces-pai">
 
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/briga.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Brigadeiro (Chocolate) - 2R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-  
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/beiji.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Brigadeiro <br>(Beijinho) - 2R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
 
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/chocob.png" alt="">
+          {% for produto in produtos %}
+            <div class="produtos">
+                <div class="imagens">
+                    <img src="{{ produto.imagem }}" alt="{{ produto.nome }}">
+                </div>
+                <div class="texto">
+                    <h2>{{ produto.nome }} - R$ {{ produto.preco }}</h2>
+                    <input type="button" value="Comprar" onclick="butao()">
+                </div>
             </div>
-            <div class="texto">
-              <h2>Brigadeiro (Chocolate Branco) - 2R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
+          {% endfor %}
 
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/prest.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Bolo de pote (Prestígio)  - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-  
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/bpbriga.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Bolo de pote (Chocolate)  - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
+      
 
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/bpbranco.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Bolo de pote (Chocolate Branco) - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/bdpb.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Bolo de pote (Brigadeiro)  - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-  
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/morango.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Bolo <br>(Morango) - 3R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/maracuja.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Bolo <br>(Maracujá) - 3R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-  
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/oreo.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Donuts<br> (Oreo) - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/mm.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Donuts<br> (MM) - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/marsh.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Donuts<br> (Marshmallow) - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/dochoco.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Donuts<br> (Chocolate) - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/pudim.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Pudim - 5R$</h2>
-              <input type="button" value="Comprar">
-            </div>
-          </div>
-        </div>
-  
-        <div class="doces">
-          <div class="produtos">
-            <div class="imagens">
-              <img src="/static/imagens/cupcake.png" alt="">
-            </div>
-            <div class="texto">
-              <h2>Cupcake - 5R$</h2>
-              <input type="button" value="Comprar" onclick="butao()">
-            </div>
-          </div>
-        </div>
       </div>
-  </div>
+
+</main>
+<footer>
+  <p>&copy; 2025 Sweet Dream. Todos os direitos reservados.</p>
+</footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="/static/script.js"></script>
 </body>

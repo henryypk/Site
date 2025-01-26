@@ -66,7 +66,7 @@ label {
     color: #555;
 }
 
-input[type="text"], input[type="file"] {
+input[type="text"], input[type="file"],input[type="number"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -91,6 +91,7 @@ button {
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+
 }
 
 button:hover {
@@ -105,7 +106,48 @@ footer {
     color: white;
     font-size: 0.9rem;
 }
+.icone img {
+   
+    cursor: pointer;
+    width: 120px;
+    opacity: 0.8;
+}
+.lol{
+    display: flex;
+    gap: 50px;
+}
 
+
+.tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tabela-produtos th, .tabela-produtos td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.tabela-produtos th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela-produtos tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tabela-produtos img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+}
 /* Estilos Responsivos */
 @media (max-width: 768px) {
     .form-container {

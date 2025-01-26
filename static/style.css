@@ -11,7 +11,7 @@ body {
     color: #5b3e2f; 
     font-weight: 300;
     line-height: 1.6;
-    padding: 0 20px; 
+
     
 }
 
@@ -29,7 +29,7 @@ header {
 
 .icone img {
    
-    
+    cursor: pointer;
     width: 120px;
     opacity: 0.8;
 }
@@ -52,9 +52,8 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
-    margin: 0 auto;
-    margin-top: 40px;
-    width: 1000px;
+    margin: 40px auto; /* Centraliza horizontalmente */
+    max-width: 1000px; /* Controla o tamanho máximo */
     height: auto;
 }
 
@@ -62,19 +61,21 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff4e1; /* Cor de fundo mais suave para os itens */
+    justify-content: space-between; /* Para equilibrar conteúdo */
+    background-color: #fff4e1; /* Fundo suave */
     border-radius: 15px;
-    width: 280px;
-    height: 300px;
+    width: 280px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .produtos:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 15px rgb(0, 0, 0);
+    transform: scale(1.05); /* Animação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
 
 .imagens img {
     width: 100px;
@@ -114,7 +115,14 @@ header {
 .texto input:hover {
     background-color: #5c7f4f;
 }
-
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 90px;
+    background-color: #5b3e2f;
+    color: white;
+    font-size: 0.9rem;
+}
 
 @media (max-width: 768px) {
     .doces-pai {
