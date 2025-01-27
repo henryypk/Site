@@ -7,7 +7,7 @@
 
 body {
     background-color: #f6cbdc; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Sour Gummy', serif;
     color: #5b3e2f; 
     font-weight: 300;
     line-height: 1.6;
@@ -47,66 +47,65 @@ header {
     font-optical-sizing: auto;
 }
 
-/* Estilizando a div filtragem */
+/* Estilos para a seção de filtragem */
 .filtragem {
-    display: flex;
-    justify-content: center; /* Centraliza os filtros horizontalmente */
-    align-items: center; /* Alinha os filtros verticalmente */
-    flex-direction: column; /* Organiza os filtros em coluna */
-    gap: 20px; /* Espaçamento entre os filtros */
-    padding: 15px 0;
-    margin-top: 30px;
-    background-color: #fff4e1; /* Cor de fundo suave */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
-  }
-  .filtragem h2{
-    font-family: 'Sour Gummy', cursive;
-  }
-  
-  /* Estilizando os itens de filtro */
-  .filtragem .tipos {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 900px; /* Limita a largura máxima dos filtros */
-    flex-wrap: wrap; /* Faz com que os itens se ajustem se a tela for pequena */
-    gap: 15px;
-  }
-  
-  /* Estilizando cada filtro (item) */
-  .filtragem .tipos .itens {
-    background-color: #d18ca7; /* Cor de fundo suave */
-    color: #333; /* Cor do texto */
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transição suave para os efeitos */
-    width: 160px; /* Largura fixa para os filtros */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve para cada filtro */
-  }
-  
-  /* Efeito ao passar o mouse (hover) nos filtros */
-  .filtragem .tipos .itens:hover {
-    background-color: rgba(241, 194, 203, 0.9); /* Cor mais escura no hover */
-    transform: scale(1.1); /* Aumenta o tamanho do filtro */
-  }
-  
-  /* Estilizando o texto do título do filtro */
-  .filtragem .tipos .itens h2 {
-    font-family: 'Sour Gummy', cursive;
-    font-size: 1.2rem;
-    margin: 0; /* Remove o espaçamento padrão da tag h2 */
-    color: #fff; /* Cor branca para o texto do título */
-    transition: color 0.3s ease; /* Transição suave para a cor */
-  }
-  
-  /* Mudando a cor do título ao passar o mouse sobre o filtro */
-  .filtragem .tipos .itens:hover h2 {
-    color: #fff; /* Mantém o título branco no hover */
-  }
-  
+  background-image: url(/static/imagens/chicote-de-papaia-de-fundo-com-pintura-acrilica_53876-101919.jpg);
+  background-color: #fff4e1;
+  padding: 40px 0;
+  margin-top: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Largura máxima para manter o layout organizado */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filtragem h2 {
+  margin: 20px 0;
+  font-family: 'Sour Gummy', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #5b3e2f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.filtragem .itens {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 20px; /* Espaçamento nas laterais */
+}
+
+.filtragem .tipos {
+  background-color: #d18ca7;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+.filtragem .tipos:hover {
+  background-color: rgba(241, 194, 203, 0.9);
+  transform: scale(1.05);
+}
+
+.filtragem .tipos h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.filtragem .tipos:focus {
+  outline: none; /* Remover borda de foco */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 
 .doces-pai {
     display: flex;
@@ -119,11 +118,13 @@ header {
 }
 
 .produtos {
+    font-family: 'Sour Gummy', serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between; /* Para equilibrar conteúdo */
     background-color: #fff4e1; /* Fundo suave */
+    background-image: url(/static/imagens/chicote-de-papaia-de-fundo-com-pintura-acrilica_53876-101919.jpg);
     border-radius: 15px;
     width: 280px; /* Largura fixa */
     height: 300px; /* Altura fixa */
@@ -161,6 +162,7 @@ header {
 }
 
 .texto input {
+    font-family: 'Sour Gummy', serif;
     width: 250px;
     padding: 10px;
     margin-top: 15px;
@@ -192,6 +194,7 @@ footer {
   }
   
   .redes a {
+    font-family: 'Sour Gummy', serif;
     text-decoration: none;
     color: #000;
     font-size: 27px;

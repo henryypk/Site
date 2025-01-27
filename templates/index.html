@@ -55,12 +55,23 @@
 
       <div class="filtragem">
         <h2>FILTRAGEM DE ITENS</h2>
-        <div class="tipos">
-          <button class="btn active" onclick="filterSelection('todos')">Todos</button>
-          <button class="btn" onclick="filterSelection('brigadeiros')"> Brigadeiros</button>
-          <button class="btn" onclick="filterSelection('bdp')"> Bolos de pote</button>
-          <button class="btn" onclick="filterSelection('bolos')"> Bolos</button>x
-          <button class="btn" onclick="filterSelection('donuts')"> Donuts</button>
+        <div class="itens">
+            <div class="tipos" data-filter="todos">
+                <h2>Todos</h2>
+            </div>
+            <div class="tipos" data-filter="briga">
+                <h2>Brigadeiros</h2>
+            </div>
+            <div class="tipos" data-filter="bdp">
+                <h2>Bolos de pote</h2>
+            </div>
+            <div class="tipos" data-filter="bolos">
+               <h2>Bolos</h2>
+            </div>
+            <div class="tipos" data-filter="donuts">
+               <h2>Donuts</h2>
+            </div>
+
         </div>
     </div>
 

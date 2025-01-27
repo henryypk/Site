@@ -3,33 +3,49 @@ const carousel = new bootstrap.Carousel('#myCarousel')
 function butao(){
     alert('Compra realizada com sucesso!');
   }
-  document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".itens");
-    const items = document.querySelectorAll(".produtos");
-    let activeFilter = null; // Para rastrear o filtro ativo
-
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            const filter = button.getAttribute("data-filter");
-
-            // Alternar o filtro ativo
-            if (activeFilter === filter) {
-                activeFilter = null; // Remover o filtro
-                showAllItems(); // Mostrar todos os itens
-            } else {
-                activeFilter = filter; // Atualizar o filtro ativo
-                filterItems(filter); // Filtrar itens
-            }
-        });
-    });
-
-    function filterItems(filter) {
-        items.forEach(item => {
-            if (item.classList.contains(filter)) {
-                fadeIn(item);
-            } else {
-                fadeOut(item);
-            }
-        });
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("produtos");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
     }
-  })
+  }
+  
+  // Show filtered elements
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
+    }
+  }
+  
+  // Hide elements that are not selected
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+  
+  // Add active class to the current control button (highlight it)
+  var btnContainer = document.getElementById("tipos");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
