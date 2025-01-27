@@ -4,22 +4,23 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    
 }
 
 h1, h2 {
+    font-family: 'Sour Gummy', serif;
     font-weight: 700;
-    color: #222;
+    color: #5b3e2f;
 }
 
 p {
+    font-family: 'Sour Gummy', serif;
     font-size: 1rem;
     color: #666;
 }
 
 .header {
     background-color: #f6cbdc;
-    color: white;
+    color:#5b3e2f;
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #e1e1e1;
@@ -30,11 +31,13 @@ p {
 }
 
 .title h1 {
+    font-family: 'Sour Gummy', serif;
     font-size: 2.5rem;
     margin: 10px 0;
 }
 
 .title p {
+    font-family: 'Sour Gummy', serif;
     font-size: 1.2rem;
 }
 
@@ -46,9 +49,11 @@ p {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #5b3e2f;
 }
 
 h2 {
+    font-family: 'Sour Gummy', serif;
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
@@ -59,6 +64,7 @@ h2 {
 }
 
 label {
+    font-family: 'Sour Gummy', serif;
     display: block;
     font-size: 1.1rem;
     margin-bottom: 5px;
@@ -66,6 +72,7 @@ label {
 }
 
 input[type="text"], input[type="file"],input[type="number"] {
+    font-family: 'Sour Gummy', serif;
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -79,10 +86,12 @@ input[type="text"]:focus, input[type="file"]:focus {
 }
 
 .submit-btn {
+    font-family: 'Sour Gummy', serif;
     text-align: center;
 }
 
 button {
+        font-family: 'Sour Gummy', serif;
     background-color: #ff6f61;
     color: white;
     border: none;
@@ -113,6 +122,7 @@ footer {
   }
   
 .redes a {
+    font-family: 'Sour Gummy', serif;
     text-decoration: none;
     color: #000;
     font-size: 27px;
@@ -122,12 +132,12 @@ footer {
 }
   
 .redes a i {
+    color: #000;
     margin-right: 10px;
     font-size: 40px;
 }
 
 .icone img {
-   
     cursor: pointer;
     width: 120px;
     opacity: 0.8;
@@ -137,15 +147,15 @@ footer {
     gap: 50px;
 }
 
-
-
 .tabela-produtos {
+    font-family: 'Sour Gummy', serif;
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 18px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #5b3e2f;
 }
 
 .tabela-produtos th, .tabela-produtos td {
@@ -155,7 +165,7 @@ footer {
 
 .tabela-produtos th {
     background-color: #f4f4f4;
-    color: #333;
+    color: #5b3e2f;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -174,17 +184,20 @@ footer {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
-    .form-container {
-        padding: 20px;
-    }
-
+@media (max-width: 480px) {
     .header {
-        text-align: left;
-        padding: 15px;
+        text-align: center;
     }
 
-    .title h1 {
-        font-size: 2rem;
+    .form-container {
+        margin-top: 10px;
+    }
+
+    .table td, .table th {
+        font-size: 12px;
+    }
+
+    .table img {
+        width: 60px;
     }
 }

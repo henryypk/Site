@@ -1,5 +1,4 @@
-
- h2{
+h2{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,17 +27,14 @@ header {
 }
 
 .icone img {
-   
     cursor: pointer;
     width: 120px;
-    opacity: 0.8;
 }
 
 .carousel-item img{
     height: 700px;
     width: 100%;
     border-radius: 25px;
-    
 }
 .atalhos {
     display: flex;
@@ -47,7 +43,6 @@ header {
     font-optical-sizing: auto;
 }
 
-/* Estilos para a seção de filtragem */
 .filtragem {
   background-image: url(/static/imagens/chicote-de-papaia-de-fundo-com-pintura-acrilica_53876-101919.jpg);
   background-color: #fff4e1;
@@ -138,7 +133,6 @@ header {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-
 .imagens img {
     width: 100px;
     height: 100px;
@@ -177,6 +171,7 @@ header {
 
 .texto input:hover {
     background-color: rgba(241, 194, 203, 0.9);
+
 }
 footer {
     opacity: 0.6;
@@ -189,11 +184,11 @@ footer {
     font-size: 0.9rem;
 }
 
-  .redes {
+.redes {
     margin-top: 10px;
-  }
+}
   
-  .redes a {
+.redes a {
     font-family: 'Sour Gummy', serif;
     text-decoration: none;
     color: #000;
@@ -201,24 +196,61 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
   
-  .redes a i {
+.redes a i {
     margin-right: 10px;
     font-size: 40px;
+}
+
+@media (max-width: 600px) {
+  header {
+      flex-direction: column;
+      padding: 10px;
   }
 
-@media (max-width: 768px) {
-    .doces-pai {
-        flex-direction: column;
-        align-items: center;
-    }
+  .icone img {
+      width: 100px;
+  }
 
-    .produtos {
-        width: 90%;
-    }
+  .carousel-item img {
+      height: 300px;
+  }
 
-    .meiao h2 {
-        font-size: 32px;
-    }
+  .filtragem {
+      padding: 20px 10px;
+      max-width: 100%;
+  }
+
+  .filtragem h2 {
+      font-size: 24px;
+  }
+
+  .filtragem .itens {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .produtos {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+  }
+
+  .texto h2 {
+      font-size: 22px;
+  }
+
+  .texto input {
+      width: 100%;
+      padding: 12px;
+  }
+
+  footer {
+      padding: 50px;
+  }
+
+  .redes a {
+      font-size: 20px;
+  }
 }
