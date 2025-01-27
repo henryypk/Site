@@ -1,4 +1,3 @@
-/* Definições de fontes e cores */
 body {
     font-family: 'Sour Gummy', sans-serif;
     background-color: #f8f9fa;
@@ -18,7 +17,6 @@ p {
     color: #666;
 }
 
-/* Cabeçalho */
 .header {
     background-color: #f6cbdc;
     color: white;
@@ -40,7 +38,7 @@ p {
     font-size: 1.2rem;
 }
 
-/* Formulário */
+
 .form-container {
     background-color: #f6cbdc;
     max-width: 500px;
@@ -99,14 +97,35 @@ button:hover {
     background-color: #e45e51;
 }
 
-/* Rodapé */
 footer {
+    opacity: 0.6;
+    border-radius: 15px;
+    margin-top: 20px;
     text-align: center;
     padding: 90px;
-    background-color: #333;
-    color: white;
+    background-color: rgba(255, 216, 223, 0.9);
+    color: #5b3e2f;
     font-size: 0.9rem;
 }
+
+.redes {
+    margin-top: 10px;
+  }
+  
+.redes a {
+    text-decoration: none;
+    color: #000;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.redes a i {
+    margin-right: 10px;
+    font-size: 40px;
+}
+
 .icone img {
    
     cursor: pointer;
@@ -155,7 +174,6 @@ footer {
     text-decoration: none;
 }
 
-/* Estilos Responsivos */
 @media (max-width: 768px) {
     .form-container {
         padding: 20px;

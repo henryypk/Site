@@ -47,6 +47,67 @@ header {
     font-optical-sizing: auto;
 }
 
+/* Estilizando a div filtragem */
+.filtragem {
+    display: flex;
+    justify-content: center; /* Centraliza os filtros horizontalmente */
+    align-items: center; /* Alinha os filtros verticalmente */
+    flex-direction: column; /* Organiza os filtros em coluna */
+    gap: 20px; /* Espaçamento entre os filtros */
+    padding: 15px 0;
+    margin-top: 30px;
+    background-color: #fff4e1; /* Cor de fundo suave */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+  }
+  .filtragem h2{
+    font-family: 'Sour Gummy', cursive;
+  }
+  
+  /* Estilizando os itens de filtro */
+  .filtragem .tipos {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 900px; /* Limita a largura máxima dos filtros */
+    flex-wrap: wrap; /* Faz com que os itens se ajustem se a tela for pequena */
+    gap: 15px;
+  }
+  
+  /* Estilizando cada filtro (item) */
+  .filtragem .tipos .itens {
+    background-color: #d18ca7; /* Cor de fundo suave */
+    color: #333; /* Cor do texto */
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para os efeitos */
+    width: 160px; /* Largura fixa para os filtros */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve para cada filtro */
+  }
+  
+  /* Efeito ao passar o mouse (hover) nos filtros */
+  .filtragem .tipos .itens:hover {
+    background-color: rgba(241, 194, 203, 0.9); /* Cor mais escura no hover */
+    transform: scale(1.1); /* Aumenta o tamanho do filtro */
+  }
+  
+  /* Estilizando o texto do título do filtro */
+  .filtragem .tipos .itens h2 {
+    font-family: 'Sour Gummy', cursive;
+    font-size: 1.2rem;
+    margin: 0; /* Remove o espaçamento padrão da tag h2 */
+    color: #fff; /* Cor branca para o texto do título */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+  }
+  
+  /* Mudando a cor do título ao passar o mouse sobre o filtro */
+  .filtragem .tipos .itens:hover h2 {
+    color: #fff; /* Mantém o título branco no hover */
+  }
+  
+
 .doces-pai {
     display: flex;
     flex-wrap: wrap;
@@ -103,7 +164,7 @@ header {
     width: 250px;
     padding: 10px;
     margin-top: 15px;
-    background-color: #26660e;
+    background-color: #d18ca7;
     border: none;
     border-radius: 25px;
     color: white;
@@ -113,7 +174,7 @@ header {
 }
 
 .texto input:hover {
-    background-color: #314729;
+    background-color: rgba(241, 194, 203, 0.9);
 }
 footer {
     opacity: 0.6;

@@ -53,8 +53,27 @@
         </button>
       </div>
 
-      <div class="doces-pai">
+      <div class="filtragem">
+        <h2>FILTRAGEM DE ITENS</h2>
+        <div class="tipos">
+            <div class="itens" data-filter="brigas">
+                <h2>Brigadeiros</h2>
+            </div>
+            <div class="itens" data-filter="bdp">
+                <h2>Bolos de pote</h2>
+            </div>
+            <div class="itens" data-filter="bolos">
+                <h2>Bolos</h2>
+            </div>
+            <div class="itens" data-filter="donuts">
+               <h2>Donuts</h2>
+            </div>
 
+        </div>
+    </div>
+
+
+      <div class="doces-pai">
 
           {% for produto in produtos %}
             <div class="produtos">
@@ -68,8 +87,6 @@
             </div>
           {% endfor %}
 
-      
-
       </div>
 
 </main>
@@ -80,7 +97,8 @@
       <i class="fa fa-instagram"></i> @sd.sweet_dream_
     </a>
 </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="/static/script.js"></script>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/static/script.js"></script>
 </html>
