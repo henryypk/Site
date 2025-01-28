@@ -56,13 +56,10 @@
       <div class="filtragem">
         <h2>FILTRAGEM DE ITENS</h2>
         <div class="itens">
-            <div class="tipos" data-filter="todos">
-                <h2>Todos</h2>
-            </div>
-            <div class="tipos" data-filter="briga">
+            <div class="tipos" data-filter="brigadeiros">
                 <h2>Brigadeiros</h2>
             </div>
-            <div class="tipos" data-filter="bdp">
+            <div class="tipos" data-filter="bolos_de_pote">
                 <h2>Bolos de pote</h2>
             </div>
             <div class="tipos" data-filter="bolos">
@@ -79,7 +76,7 @@
       <div class="doces-pai">
 
           {% for produto in produtos %}
-            <div class="produtos">
+            <div class="produtos {{ produto.categoria }}">
                 <div class="imagens">
                     <img src="{{ produto.imagem }}" alt="{{ produto.nome }}">
                 </div>

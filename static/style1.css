@@ -119,12 +119,12 @@ footer {
 
 .redes {
     margin-top: 10px;
-  }
+}
   
 .redes a {
     font-family: 'Sour Gummy', serif;
     text-decoration: none;
-    color: #000;
+    color: #5b3e2f;
     font-size: 27px;
     display: flex;
     align-items: center;
@@ -132,11 +132,9 @@ footer {
 }
   
 .redes a i {
-    color: #000;
     margin-right: 10px;
     font-size: 40px;
 }
-
 .icone img {
     cursor: pointer;
     width: 120px;

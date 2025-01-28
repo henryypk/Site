@@ -23,12 +23,13 @@ app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
 
 db = SQLAlchemy(app)
 
-# Modelo do Produto
+# Modelo do Produto com a coluna categoria
 class Produto(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
     preco = db.Column(db.Float, nullable=False)
     imagem = db.Column(db.String(200), nullable=False)
+    categoria = db.Column(db.String(50), nullable=False)  # Coluna categoria
 
     def __repr__(self):
         return f'<Produto {self.nome}>'
@@ -44,36 +45,38 @@ def allowed_file(filename):
 # Rotas
 @app.route('/')
 def home():
-    produtos = Produto.query.all()
+    produtos = Produto.query.all()  # Obtemos todos os produtos cadastrados
     return render_template('index.html', produtos=produtos)
 
 @app.route('/crud', methods=['GET', 'POST'])
 def crud():
     if request.method == 'POST':
-        # Verifica se é para editar ou criar
+        # Recebe os dados do formulário
         produto_id = request.form.get('id')  # Verifica se existe um ID no formulário
         nome = request.form['nome']
         preco = request.form['preco']
         imagem = request.files['imagem']
+        categoria = request.form['categoria']  # Captura a categoria selecionada
 
         if produto_id:  # Se existir um ID, é uma edição
             produto = Produto.query.get_or_404(produto_id)
             produto.nome = nome
             produto.preco = float(preco)
-            
+            produto.categoria = categoria  # Atualiza a categoria
+
             if imagem and allowed_file(imagem.filename):
                 filename = secure_filename(imagem.filename)
                 imagem_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 imagem.save(imagem_path)
                 produto.imagem = f'static/imagens/{filename}'
-                
+
             db.session.commit()  # Commit para salvar as alterações
         else:  # Caso contrário, é criação de novo produto
             if imagem and allowed_file(imagem.filename):
                 filename = secure_filename(imagem.filename)
                 imagem_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 imagem.save(imagem_path)
-                novo_produto = Produto(nome=nome, preco=float(preco), imagem=f'static/imagens/{filename}')
+                novo_produto = Produto(nome=nome, preco=float(preco), imagem=f'static/imagens/{filename}', categoria=categoria)  # Adiciona categoria
                 db.session.add(novo_produto)
                 db.session.commit()
 
@@ -94,9 +97,7 @@ def deletar(id):
     produto = Produto.query.get_or_404(id)  # Busca o produto ou retorna 404 se não existir
     db.session.delete(produto)  # Remove o produto do banco de dados
     db.session.commit()  # Salva as alterações
-    return redirect(url_for('crud'))
-
-
+    return redirect(url_for('crud'))  # Redireciona para a página de CRUD
 
 if __name__ == '__main__':
     app.run(debug=True)
