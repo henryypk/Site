@@ -174,35 +174,29 @@ header {
     background-color: rgba(241, 194, 203, 0.9);
 
 }
-footer {
-    opacity: 0.6;
-    border-radius: 15px;
-    margin-top: 20px;
-    text-align: center;
-    padding: 14px;
-    background-color: rgba(255, 216, 223, 0.9);
-    color: #5b3e2f;
-    font-size: 0.9rem;
-}
 
-.redes {
-    margin-top: 10px;
+footer {
+    background-color: rgba(241, 194, 203, 0.9); /* Cor de fundo */
+    opacity: 0.7;
+    padding: 20px 0;
+    text-align: center; 
+    margin-top: 40px; 
 }
   
-.redes a {
-    font-family: 'Sour Gummy', serif;
+footer .redes a {
+    color: #453329; 
     text-decoration: none;
-    color: #000;
-    font-size: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 24px; 
+    margin: 0 10px; 
 }
   
-.redes a i {
-    margin-top: 10px;
-    margin-right: 10px;
-    font-size: 40px;
+footer .redes a:hover {
+    color: #7a5d4e; 
+}
+  
+footer .contact-info {
+    margin-top: 15px; 
+    font-size: 20px; 
 }
 
 @media (max-width: 600px) {
@@ -243,16 +237,8 @@ footer {
       font-size: 22px;
   }
 
-  .texto input {
-      width: 100%;
-      padding: 12px;
-  }
-
-  footer {
-      padding: 50px;
-  }
-
-  .redes a {
-      font-size: 20px;
-  }
+ .texto input {
+    width: 100%;
+    padding: 12px;
+ }
 }

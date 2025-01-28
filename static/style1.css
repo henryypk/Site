@@ -106,35 +106,6 @@ button:hover {
     background-color: #e45e51;
 }
 
-footer {
-    opacity: 0.6;
-    border-radius: 15px;
-    margin-top: 20px;
-    text-align: center;
-    padding: 90px;
-    background-color: rgba(255, 216, 223, 0.9);
-    color: #5b3e2f;
-    font-size: 0.9rem;
-}
-
-.redes {
-    margin-top: 10px;
-}
-  
-.redes a {
-    font-family: 'Sour Gummy', serif;
-    text-decoration: none;
-    color: #5b3e2f;
-    font-size: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-  
-.redes a i {
-    margin-right: 10px;
-    font-size: 40px;
-}
 .icone img {
     cursor: pointer;
     width: 120px;
@@ -183,20 +154,37 @@ footer {
     text-decoration: none;
 }
 
-@media (max-width: 480px) {
-    .header {
-        text-align: center;
-    }
-
-    .form-container {
-        margin-top: 10px;
-    }
-
-    .table td, .table th {
-        font-size: 12px;
-    }
-
-    .table img {
-        width: 60px;
-    }
+footer {
+    background-color: rgba(241, 194, 203, 0.9);
+    opacity: 0.7;
+    padding: 20px 0;
+    text-align: center; 
+    margin-top: 40px; 
 }
+  
+footer .redes a {
+    color: #453329; 
+    text-decoration: none;
+    font-size: 24px; 
+    margin: 0 10px; 
+}
+
+footer .redes a:hover {
+    color: #7a5d4e; 
+}
+
+footer .contact-info {
+    margin-top: 15px; 
+    font-size: 20px; 
+}  
+
+footer .contact-info p {
+    margin: 5px 0; 
+}
+
+footer .contact-info i {
+    margin-right: 8px; 
+}
+
+
+
