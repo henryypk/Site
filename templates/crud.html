@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/static/style1.css">
@@ -18,7 +20,7 @@
     <header class="header">
         <a href="/">
             <div class="icone">
-              <img src="/static/imagens/logo.png" alt="">
+                <img src="/static/imagens/logo.png" alt="">
             </div>
         </a>
 
@@ -31,40 +33,48 @@
         <div class="form-container">
             <form method="POST" enctype="multipart/form-data">
                 <h2>{% if produto_editar %}Editar Produto{% else %}Registrar Produto{% endif %}</h2>
-        
+
                 <!-- Campo oculto para armazenar o ID do produto se estiver editando -->
                 <input type="hidden" name="id" value="{{ produto_editar.id if produto_editar else '' }}">
-        
+
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" value="{{ produto_editar.nome if produto_editar else '' }}" placeholder="Informe o nome" required>
+                    <input type="text" id="nome" name="nome" value="{{ produto_editar.nome if produto_editar else '' }}"
+                        placeholder="Informe o nome" required>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" id="preco" name="preco" value="{{ produto_editar.preco if produto_editar else '' }}" placeholder="Informe o preço" required>
+                    <input type="number" id="preco" name="preco"
+                        value="{{ produto_editar.preco if produto_editar else '' }}" placeholder="Informe o preço"
+                        required>
                 </div>
-        
+
                 <!-- Novo campo select para categoria -->
                 <div class="form-group">
                     <label for="categoria">Categoria</label>
                     <select id="categoria" name="categoria" required>
-                        <option value="brigadeiros" {% if produto_editar and produto_editar.categoria == 'brigadeiros' %}selected{% endif %}>Brigadeiros</option>
-                        <option value="bolos_de_pote" {% if produto_editar and produto_editar.categoria == 'bolos_de_pote' %}selected{% endif %}>Bolos de Pote</option>
-                        <option value="bolos" {% if produto_editar and produto_editar.categoria == 'bolos' %}selected{% endif %}>Bolos</option>
-                        <option value="donuts" {% if produto_editar and produto_editar.categoria == 'donuts' %}selected{% endif %}>Donuts</option>
+                        <option value="brigadeiros" {% if produto_editar and produto_editar.categoria=='brigadeiros'
+                            %}selected{% endif %}>Brigadeiros</option>
+                        <option value="bolos_de_pote" {% if produto_editar and produto_editar.categoria=='bolos_de_pote'
+                            %}selected{% endif %}>Bolos de Pote</option>
+                        <option value="bolos" {% if produto_editar and produto_editar.categoria=='bolos' %}selected{%
+                            endif %}>Bolos</option>
+                        <option value="donuts" {% if produto_editar and produto_editar.categoria=='donuts' %}selected{%
+                            endif %}>Donuts</option>
                     </select>
                 </div>
-        
+
                 <div class="form-group">
                     <label for="imagem">Imagem</label>
                     <input type="file" id="imagem" name="imagem">
                     {% if produto_editar and produto_editar.imagem %}
-                        <p>Imagem atual:</p>
-                        <img src="{{ produto_editar.imagem }}" alt="{{ produto_editar.nome }}" style="width: 150px; height: auto; margin-top: 10px;">
+                    <p>Imagem atual:</p>
+                    <img src="{{ produto_editar.imagem }}" alt="{{ produto_editar.nome }}"
+                        style="width: 150px; height: auto; margin-top: 10px;">
                     {% endif %}
                 </div>
-        
+
                 <div class="submit-btn">
                     <button type="submit" class="btn btn-primary">
                         {% if produto_editar %}Salvar Alterações{% else %}Registrar Produto{% endif %}
@@ -72,64 +82,80 @@
                 </div>
             </form>
         </div>
-        
-            <h2>Produtos Cadastrados</h2>
-            <table class="tabela-produtos">
-                <thead>
-                    <tr>
-                        <th>Imagem</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th>Categoria</th>  <!-- Coluna de categoria -->
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for produto in produtos %}
-                    <tr>
-                        <td><img src="{{ produto.imagem }}" alt="{{ produto.nome }}" style="width: 100px;"></td>
-                        <td>{{ produto.nome }}</td>
-                        <td>R$ {{ produto.preco }}</td>
-                        <td>{{ produto.categoria }}</td>  <!-- Exibe a categoria -->
-                        <td>
-                            <a href="{{ url_for('crud') }}?editar={{ produto.id }}">
-                                <button type="submit">Editar</button>
-                            </a>
-                            <form action="{{ url_for('deletar', id=produto.id) }}" method="POST" style="display: inline;">
-                                <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este produto?')">Deletar</button>
-                            </form>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            
-            
+
+        <h2>Produtos Cadastrados</h2>
+        <table class="tabela-produtos">
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Categoria</th> <!-- Coluna de categoria -->
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td><img src="{{ produto.imagem }}" alt="{{ produto.nome }}" style="width: 100px;"></td>
+                    <td>{{ produto.nome }}</td>
+                    <td>R$ {{ produto.preco }}</td>
+                    <td>{{ produto.categoria }}</td> <!-- Exibe a categoria -->
+                    <td>
+                        <a href="{{ url_for('crud') }}?editar={{ produto.id }}">
+                            <button type="submit">Editar</button>
+                        </a>
+                        <form action="{{ url_for('deletar', id=produto.id) }}" method="POST" style="display: inline;">
+                            <button type="submit"
+                                onclick="return confirm('Tem certeza que deseja deletar este produto?')">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
         </div>
     </main>
-    
+
 
     <footer>
-        <div class="redes">
-          <a href="https://www.instagram.com/sd.sweet_dream_" target="_blank">
-            <i class="fa fa-instagram"></i> @sd.sweet_dream_
-          </a>
+        <div class="container">
+            <div class="row">
+                <!-- Primeira coluna com a div redes -->
+                <div class="col-md-6">
+                    <h2>| Redes Sociais</h2> <!-- Título adicionado aqui -->
+                    <div class="redes">
+                        <a href="https://www.instagram.com/sd.sweet_dream_" target="_blank">
+                            <i class="fa fa-instagram"></i> @sd.sweet_dream_
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Segunda coluna com a div contact-info -->
+                <div class="col-md-6">
+                    <h2>| Contato</h2> <!-- Título adicionado aqui -->
+                    <div class="contact-info">
+                        <p>
+                            <i class="fa fa-map-marker"></i> IFMA - Campus Avançado Rosário
+                        </p>
+                        <p>
+                            <i class="fa fa-phone"></i> (98) 991360928
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope"></i> sd.sweetdream@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-info">
-          <p>
-            <i class="fa fa-map-marker"></i> IFMA - Campus Avançado Rosário
-          </p>
-          <p>
-            <i class="fa fa-phone"></i>  (98) 991360928
-          </p>
-          <p>
-            <i class="fa fa-envelope"></i> sd.sweetdream@gmail.com
-          </p>
-        </div>
-      </footer>
+    </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 <script src="/static/script.js"></script>
 
 </html>

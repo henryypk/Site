@@ -183,6 +183,10 @@ footer {
     margin-top: 40px; 
 }
   
+footer .redes {
+    margin-top: 10px;
+}
+
 footer .redes a {
     color: #453329; 
     text-decoration: none;
@@ -198,6 +202,31 @@ footer .contact-info {
     margin-top: 15px; 
     font-size: 20px; 
 }
+
+footer .contact-info a {
+    color: #453329; 
+    text-decoration: none;
+    font-size: 24px; 
+    margin: 0 10px; 
+}
+  
+footer .contact-info a:hover {
+    color: #7a5d4e; 
+}
+
+.direitos-reservados {
+    background-color: rgba(229, 153, 167, 0.9); 
+    text-align: center; 
+    padding: 10px; 
+    font-family: 'Sour Gummy', serif;
+    font-size: 14px;
+    color: #3a4046; 
+    opacity: 0.9;
+  }
+  
+  .direitos-reservados p {
+    margin: 0; 
+  }
 
 @media (max-width: 600px) {
   header {

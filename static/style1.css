@@ -155,7 +155,7 @@ button:hover {
 }
 
 footer {
-    background-color: rgba(241, 194, 203, 0.9);
+    background-color: rgba(241, 194, 203, 0.9); /* Cor de fundo */
     opacity: 0.7;
     padding: 20px 0;
     text-align: center; 
@@ -168,22 +168,25 @@ footer .redes a {
     font-size: 24px; 
     margin: 0 10px; 
 }
-
+footer .redes p {
+    color: #453329;
+    margin-top: 15px; 
+    font-size: 20px; 
+}
+  
 footer .redes a:hover {
     color: #7a5d4e; 
 }
-
+  
 footer .contact-info {
     margin-top: 15px; 
     font-size: 20px; 
-}  
-
-footer .contact-info p {
-    margin: 5px 0; 
 }
 
-footer .contact-info i {
-    margin-right: 8px; 
+footer .contact-info p {
+    color: #453329;
+    margin-top: 15px; 
+    font-size: 20px; 
 }
 
 
