@@ -6,21 +6,11 @@ body {
     color: #333;
 }
 
-h1, h2 {
-    font-family: 'Sour Gummy', serif;
-    font-weight: 700;
-    color: #5b3e2f;
-}
 
-p {
-    font-family: 'Sour Gummy', serif;
-    font-size: 1rem;
-    color: #666;
-}
 
 .header {
     background-color: #f6cbdc;
-    color:#5b3e2f;
+    color: #5b3e2f;
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #e1e1e1;
@@ -52,12 +42,6 @@ p {
     color: #5b3e2f;
 }
 
-h2 {
-    font-family: 'Sour Gummy', serif;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
 
 .form-group {
     margin-bottom: 20px;
@@ -71,7 +55,9 @@ label {
     color: #555;
 }
 
-input[type="text"], input[type="file"],input[type="number"] {
+input[type="text"],
+input[type="file"],
+input[type="number"] {
     font-family: 'Sour Gummy', serif;
     width: 100%;
     padding: 12px;
@@ -80,7 +66,8 @@ input[type="text"], input[type="file"],input[type="number"] {
     font-size: 1rem;
 }
 
-input[type="text"]:focus, input[type="file"]:focus {
+input[type="text"]:focus,
+input[type="file"]:focus {
     border-color: #ff6f61;
     outline: none;
 }
@@ -91,7 +78,7 @@ input[type="text"]:focus, input[type="file"]:focus {
 }
 
 button {
-        font-family: 'Sour Gummy', serif;
+    font-family: 'Sour Gummy', serif;
     background-color: #ff6f61;
     color: white;
     border: none;
@@ -111,7 +98,8 @@ button:hover {
     width: 120px;
     opacity: 0.8;
 }
-.lol{
+
+.lol {
     display: flex;
     gap: 50px;
 }
@@ -128,7 +116,8 @@ button:hover {
 
 }
 
-.tabela-produtos th, .tabela-produtos td {
+.tabela-produtos th,
+.tabela-produtos td {
     border: 1px solid #ddd;
     padding: 12px;
 }
@@ -150,49 +139,66 @@ button:hover {
     border-radius: 8px;
 }
 
-.tabela-produtos a{
+.tabela-produtos a {
     text-decoration: none;
 }
 
 footer {
-    background-color: rgba(241, 194, 203, 0.9); /* Cor de fundo */
+    background-color: rgba(241, 194, 203, 0.9);
     opacity: 0.7;
     padding: 20px 0;
-    text-align: center; 
-    margin-top: 40px; 
+    text-align: center;
+    margin-top: 40px;
 }
-  
+
+footer .redes {
+    margin-top: 10px;
+}
+
 footer .redes a {
-    color: #453329; 
+    color: #453329;
     text-decoration: none;
-    font-size: 24px; 
-    margin: 0 10px; 
+    font-size: 24px;
+    margin: 0 10px;
 }
-footer .redes p {
-    color: #453329;
-    margin-top: 15px; 
-    font-size: 20px; 
-}
-  
+
 footer .redes a:hover {
-    color: #7a5d4e; 
-}
-  
-footer .contact-info {
-    margin-top: 15px; 
-    font-size: 20px; 
+    color: #7a5d4e;
 }
 
 footer .contact-info {
-    margin-top: 15px; 
-    font-size: 20px; 
+    margin-top: 15px;
+    font-size: 20px;
 }
 
-footer .contact-info p {
+footer .contact-info a {
     color: #453329;
-    margin-top: 15px; 
-    font-size: 20px; 
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 10px;
 }
 
+footer .contact-info a:hover {
+    color: #7a5d4e;
+}
 
+.topico {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #453329;
+    font-size: 18px;
+}
 
+.direitos-reservados {
+    background-color: rgba(229, 153, 167, 0.9);
+    text-align: center;
+    padding: 10px;
+    font-family: 'Sour Gummy', serif;
+    font-size: 14px;
+    color: #3a4046;
+    opacity: 0.9;
+}
+
+.direitos-reservados p {
+    margin: 0;
+}

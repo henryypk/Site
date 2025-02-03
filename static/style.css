@@ -1,13 +1,13 @@
-h2{
+h2 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #f6cbdc; 
+    background-color: #f6cbdc;
     font-family: 'Sour Gummy', serif;
-    color: #5b3e2f; 
+    color: #5b3e2f;
     font-weight: 300;
     line-height: 1.6;
     background-image: url('/static/imagens/verniz.jpg');
@@ -31,7 +31,7 @@ header {
     width: 120px;
 }
 
-.carousel-item img{
+.carousel-item img {
     height: 700px;
     width: 100%;
     border-radius: 25px;
@@ -45,62 +45,65 @@ header {
 }
 
 .filtragem {
-  background-image: url(/static/imagens/chicote-de-papaia-de-fundo-com-pintura-acrilica_53876-101919.jpg);
-  background-color: #fff4e1;
-  padding: 40px 0;
-  margin-top: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1200px; /* Largura máxima para manter o layout organizado */
-  margin-left: auto;
-  margin-right: auto;
+    background-image: url(/static/imagens/chicote-de-papaia-de-fundo-com-pintura-acrilica_53876-101919.jpg);
+    background-color: #fff4e1;
+    padding: 40px 0;
+    margin-top: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    /* Largura máxima para manter o layout organizado */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .filtragem h2 {
-  margin: 20px 0;
-  font-family: 'Sour Gummy', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #5b3e2f;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    margin: 20px 0;
+    font-family: 'Sour Gummy', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #5b3e2f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .filtragem .itens {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 0 20px; /* Espaçamento nas laterais */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 20px;
+    /* Espaçamento nas laterais */
 }
 
 .filtragem .tipos {
-  background-color: #d18ca7;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  font-family: 'Lato', sans-serif;
+    background-color: #d18ca7;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Lato', sans-serif;
 }
 
 .filtragem .tipos:hover {
-  background-color: rgba(241, 194, 203, 0.9);
-  transform: scale(1.05);
+    background-color: rgba(241, 194, 203, 0.9);
+    transform: scale(1.05);
 }
 
 .filtragem .tipos h2 {
-  margin: 0;
-  color: #fff;
-  font-size: 20px;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
 }
 
 .filtragem .tipos:focus {
-  outline: none; /* Remover borda de foco */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    /* Remover borda de foco */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .doces-pai {
@@ -108,8 +111,10 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
-    margin: 40px auto; /* Centraliza horizontalmente */
-    max-width: 1000px; /* Controla o tamanho máximo */
+    margin: 40px auto;
+    /* Centraliza horizontalmente */
+    max-width: 1000px;
+    /* Controla o tamanho máximo */
     height: auto;
 }
 
@@ -118,12 +123,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Para equilibrar conteúdo */
-    background-color: #fff4e1; /* Fundo suave */
+    justify-content: space-between;
+    /* Para equilibrar conteúdo */
+    background-color: #fff4e1;
+    /* Fundo suave */
     background-image: url(/static/imagens/chicote-de-papaia-de-fundo-com-pintura-acrilica_53876-101919.jpg);
     border-radius: 15px;
-    width: 280px; /* Largura fixa */
-    height: 300px; /* Altura fixa */
+    width: 280px;
+    /* Largura fixa */
+    height: 300px;
+    /* Altura fixa */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -176,98 +185,106 @@ header {
 }
 
 footer {
-    background-color: rgba(241, 194, 203, 0.9); /* Cor de fundo */
+    background-color: rgba(241, 194, 203, 0.9);
+    /* Cor de fundo */
     opacity: 0.7;
     padding: 20px 0;
-    text-align: center; 
-    margin-top: 40px; 
+    text-align: center;
+    margin-top: 40px;
 }
-  
+
 footer .redes {
     margin-top: 10px;
 }
 
 footer .redes a {
-    color: #453329; 
+    color: #453329;
     text-decoration: none;
-    font-size: 24px; 
-    margin: 0 10px; 
+    font-size: 24px;
+    margin: 0 10px;
 }
-  
+
 footer .redes a:hover {
-    color: #7a5d4e; 
+    color: #7a5d4e;
 }
-  
+
 footer .contact-info {
-    margin-top: 15px; 
-    font-size: 20px; 
+    margin-top: 15px;
+    font-size: 20px;
 }
 
 footer .contact-info a {
-    color: #453329; 
+    color: #453329;
     text-decoration: none;
-    font-size: 24px; 
-    margin: 0 10px; 
+    font-size: 24px;
+    margin: 0 10px;
 }
-  
+
 footer .contact-info a:hover {
-    color: #7a5d4e; 
+    color: #7a5d4e;
+}
+
+.topico {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #453329;
+    font-size: 18px;
 }
 
 .direitos-reservados {
-    background-color: rgba(229, 153, 167, 0.9); 
-    text-align: center; 
-    padding: 10px; 
+    background-color: rgba(229, 153, 167, 0.9);
+    text-align: center;
+    padding: 10px;
     font-family: 'Sour Gummy', serif;
     font-size: 14px;
-    color: #3a4046; 
+    color: #3a4046;
     opacity: 0.9;
-  }
-  
-  .direitos-reservados p {
-    margin: 0; 
-  }
+}
+
+.direitos-reservados p {
+    margin: 0;
+}
 
 @media (max-width: 600px) {
-  header {
-      flex-direction: column;
-      padding: 10px;
-  }
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
 
-  .icone img {
-      width: 100px;
-  }
+    .icone img {
+        width: 100px;
+    }
 
-  .carousel-item img {
-      height: 300px;
-  }
+    .carousel-item img {
+        height: 300px;
+    }
 
-  .filtragem {
-      padding: 20px 10px;
-      max-width: 100%;
-  }
+    .filtragem {
+        padding: 20px 10px;
+        max-width: 100%;
+    }
 
-  .filtragem h2 {
-      font-size: 24px;
-  }
+    .filtragem h2 {
+        font-size: 24px;
+    }
 
-  .filtragem .itens {
-      flex-direction: column;
-      gap: 15px;
-  }
+    .filtragem .itens {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-  .produtos {
-      width: 100%;
-      height: auto;
-      padding: 15px;
-  }
+    .produtos {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
 
-  .texto h2 {
-      font-size: 22px;
-  }
+    .texto h2 {
+        font-size: 22px;
+    }
 
- .texto input {
-    width: 100%;
-    padding: 12px;
- }
+    .texto input {
+        width: 100%;
+        padding: 12px;
+    }
 }

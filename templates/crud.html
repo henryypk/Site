@@ -62,8 +62,8 @@
                             endif %}>Bolos</option>
                         <option value="donuts" {% if produto_editar and produto_editar.categoria=='donuts' %}selected{%
                             endif %}>Donuts</option>
-                        <option value="bebidas" {% if produto_editar and produto_editar.categoria=='bebidas' %}selected{%
-                            endif %}>Bebidas</option>
+                        <option value="bebidas" {% if produto_editar and produto_editar.categoria=='bebidas'
+                            %}selected{% endif %}>Bebidas</option>
                     </select>
                 </div>
 
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary" >
+                    <button type="submit" class="btn btn-primary">
                         {% if produto_editar %}Salvar Alterações{% else %}Registrar Produto{% endif %}
                     </button>
                 </div>
@@ -125,9 +125,9 @@
     <footer>
         <div class="container">
             <div class="row">
-                <!-- Primeira coluna com a div redes -->
-                <div class="col-md-6">
-                    <h2>| Redes Sociais</h2> <!-- Título adicionado aqui -->
+                <!-- Coluna para Redes Sociais (esquerda) -->
+                <div class="col-md-4">
+                    <h2>| Redes Sociais</h2>
                     <div class="redes">
                         <a href="https://www.instagram.com/sd.sweet_dream_" target="_blank">
                             <i class="fa fa-instagram"></i> @sd.sweet_dream_
@@ -135,13 +135,13 @@
                     </div>
                 </div>
 
-                <!-- Segunda coluna com a div contact-info -->
-                <div class="col-md-6">
-                    <h2>| Contato</h2> <!-- Título adicionado aqui -->
+                <!-- Coluna para Contato (centralizado) -->
+                <div class="col-md-4 text-center">
+                    <h2>| Contato</h2>
                     <div class="contact-info">
-                        <p>
+                        <a href="https://maps.app.goo.gl/iZZrEcp45gFbKwae7" target="_blank">
                             <i class="fa fa-map-marker"></i> IFMA - Campus Avançado Rosário
-                        </p>
+                        </a>
                         <p>
                             <i class="fa fa-phone"></i> (98) 991360928
                         </p>
@@ -150,9 +150,28 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Coluna para os Tópicos (direita) -->
+                <div class="col-md-4">
+                    <h2>| Objetivos</h2>
+                    <div class="topicos text-end">
+                        <p class="topico"><strong>Missão:</strong> Produzir doces artesanais que encantem pelo sabor e
+                            apresentação, garantindo qualidade e sustentabilidade para nossos clientes.</p>
+                        <p class="topico"><strong>Visão:</strong> Ser referência no mercado rosariense de doces
+                            artesanais, proporcionando momentos de felicidade e sabor em cada mordida com produtos de
+                            qualidade.</p>
+                        <p class="topico"><strong>Valores:</strong> Valorizamos a qualidade, sustentabilidade, inovação
+                            e um atendimento personalizado
+                            ao cliente.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <div class="direitos-reservados">
+        <p>© 2025 Sweet Dream. Todos os direitos reservados.</p>
+    </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
