@@ -6,8 +6,6 @@ body {
     color: #333;
 }
 
-
-
 .header {
     background-color: #f6cbdc;
     color: #5b3e2f;
@@ -31,7 +29,6 @@ body {
     font-size: 1.2rem;
 }
 
-
 .form-container {
     background-color: #f6cbdc;
     max-width: 500px;
@@ -41,7 +38,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #5b3e2f;
 }
-
 
 .form-group {
     margin-bottom: 20px;
