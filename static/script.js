@@ -37,13 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function fadeIn(element) {
     element.style.display = "flex"; // Garante que o item seja exibido como flex
     setTimeout(() => {
-      element.style.transition = "opacity 0.5s ease";
       element.style.opacity = "1"; // Aumenta a opacidade
     }, 0);
   }
 
   function fadeOut(element) {
-    element.style.transition = "opacity 0.5s ease";
     element.style.opacity = "0"; // Diminuir a opacidade
     setTimeout(() => {
       element.style.display = "none"; // Esconde após o fade

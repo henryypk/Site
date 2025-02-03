@@ -45,7 +45,7 @@
 
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" id="preco" name="preco"
+                    <input type="number" step="0.01" id="preco" name="preco"
                         value="{{ produto_editar.preco if produto_editar else '' }}" placeholder="Informe o preço"
                         required>
                 </div>
@@ -62,6 +62,8 @@
                             endif %}>Bolos</option>
                         <option value="donuts" {% if produto_editar and produto_editar.categoria=='donuts' %}selected{%
                             endif %}>Donuts</option>
+                        <option value="bebidas" {% if produto_editar and produto_editar.categoria=='bebidas' %}selected{%
+                            endif %}>Bebidas</option>
                     </select>
                 </div>
 
@@ -76,7 +78,7 @@
                 </div>
 
                 <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary" >
                         {% if produto_editar %}Salvar Alterações{% else %}Registrar Produto{% endif %}
                     </button>
                 </div>

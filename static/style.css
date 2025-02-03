@@ -130,7 +130,7 @@ header {
 }
 
 .produtos:hover {
-    transform: scale(1.05); /* Animação ao passar o mouse */
+    transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
